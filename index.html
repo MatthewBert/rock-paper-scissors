@@ -3,104 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-    <script>
-        // Rock Paper Scissors Javascript Logic
-        console.log("Welcome to Rock, Paper, Scissors", "You will be playing 5 rounds, good luck!");
-
-        playGame();
-
-        function getComputerChoice() {
-            //picks a number between 0 and 2 (3 options)
-            const number = Math.floor(Math.random() * 3);
-            var choice = "NA";
-            if (number == 0) {
-                choice = "rock";
-            } else if (number == 1) {
-                choice = "paper";
-            } else if (number == 2) {
-                choice = "scissors";
-            } else {
-                console.error("Computer was not able to pick an option");
-            }
-            return choice;
-        }
-
-        function getHumanChoice() {
-            //value x used for while loop
-            var x = 1;
-            //prompt the user to enter rock paper or scissors
-            choice = String(window.prompt("Please type 'rock', 'paper' or 'scissors'"));
-            //toLowerCase is used to convert user choice to lower case 
-            choice = choice.toLowerCase();
-            while (x) {
-                console.log("You have selected: " + choice);
-                if ((choice == "rock") || (choice == "paper") || (choice == "scissors")) {
-                    return choice;
-                    x = 0;
-                    // if the user does not enter a valid answer, it will loop until valid answer is given
-                } else {
-                    x = 1;
-                    choice = window.prompt("INCORRECT VALUE! Please type 'rock', 'paper' or 'scissors'");
-                    choice = choice.toLowerCase();
-                }
-            }
-        }
-
-        //PlayGame function is the logic to play 5 rounds of the game
-        function playGame() {
-            var humanScore = 0;
-            var computerScore = 0;
-            //playRound function is the logic that controls a single round of the game
-            function playRound(humanChoice, computerChoice) {
-
-                if (humanChoice == computerChoice) {
-                    console.log("It's a TIE! You both picked the same option, no points given!");
-                } else if (humanChoice == 'rock' && computerChoice == 'paper') {
-                    console.log("You lose! Paper beats Rock.");
-                    computerScore++;
-                } else if (humanChoice == 'rock' && computerChoice == 'scissors') {
-                    console.log("You win! Rock beats Scissors.");
-                    humanScore++;
-                } else if (humanChoice == 'paper' && computerChoice == 'rock') {
-                    console.log("You win! Paper beats Rock.");
-                    humanScore++;
-                } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
-                    console.log("You lose! Scissors beats Paper.");
-                    computerScore++;
-                } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
-                    console.log("You win! Scissors beats Paper.");
-                    humanScore++;
-                } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
-                    console.log("You lose! Rock beats Scissors.");
-                    computerScore++;
-                } else {
-                    console.error("An error has ocurred! please play again!")
-                }
-            }
-
-            for (let i = 0; i < 5; i++) {
-                console.log("ROUND " + (i + 1));
-                const humanSelection = getHumanChoice();
-                const computerSelection = getComputerChoice();
-                playRound(humanSelection, computerSelection);
-                console.log(`The current score is Human: ` + `${humanScore}` + ` ` + `Computer: ` + `${computerScore}`);
-            }
-
-            if (humanScore > computerScore) {
-                console.log("YOU WIN! Your score was " + humanScore + " and the computer score was " + computerScore)
-            } else if (computerScore > humanScore) {
-                console.log("YOU LOSE! Your score was " + humanScore + " and the computer score was " + computerScore)
-            } else {
-                console.log("IT WAS A TIE! Your score was " + humanScore + " and the computer score was " + computerScore)
-            }
-
-        }
-
-    </script>
+    <p>Welcome to Rock Paper Scissors. Please open your console to see results</p>
+    <script src="script.js"></script>
 </body>
 
 </html>
