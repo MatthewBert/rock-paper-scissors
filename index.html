@@ -7,7 +7,14 @@
 <body>
   <script>
     // Rock Paper Scissors Javascript Logic
-    console.log("Hello World!");
+    console.log("Welcome to Rock, Paper, Scissors");
+    var humanScore = 0;
+    var computerScore = 0;
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
 
     function getComputerChoice(){
         //picks a number between 0 and 2 (3 options)
@@ -44,6 +51,35 @@
                 choice = choice.toLowerCase();
             }
         }
+    }
+
+    //playRound function is the logic that controls a single round of the game
+    function playRound(humanChoice, computerChoice){
+
+        if(humanChoice == computerChoice){
+            console.log("It's a TIE! please play again");
+        } else if (humanChoice == 'rock' && computerChoice == 'paper'){
+            console.log("You lose! Paper beats Rock.");
+            computerScore++;
+        } else if (humanChoice == 'rock' && computerChoice == 'scissors'){
+            console.log("You win! Rock beats Scissors.");
+            humanScore++;
+        } else if (humanChoice == 'paper' && computerChoice == 'rock'){
+            console.log("You win! Paper beats Rock.");
+            humanScore++;
+        } else if (humanChoice == 'paper' && computerChoice == 'scissors'){
+            console.log("You lose! Scissors beats Paper.");
+            computerScore++;
+        } else if (humanChoice == 'scissors' && computerChoice == 'paper'){
+            console.log("You win! Scissors beats Paper.");
+            humanScore++;
+        } else if (humanChoice == 'scissors' && computerChoice == 'rock'){
+            console.log("You lose! Rock beats Scissors.");
+            computerScore++;
+        } else {
+            console.error("An error has ocurred! please play again!")
+        }
+            
     }
     
   </script>
