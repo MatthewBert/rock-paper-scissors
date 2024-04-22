@@ -8,6 +8,22 @@
   <script>
     // Rock Paper Scissors Javascript Logic
     console.log("Hello World!");
+
+    function getComputerChoice(){
+        //picks a number between 0 and 2 (3 options)
+        const number = Math.floor(Math.random() * 3);
+        var choice = "NA";
+        if(number == 0){
+            choice = "rock";
+        } else if (number == 1){
+            choice = "paper";
+        } else if (number == 2){
+            choice = "scissors";
+        } else {
+            console.error("Computer was not able to pick an option");
+        }
+        return choice;
+    }
     
   </script>
 </body>
