@@ -24,6 +24,27 @@
         }
         return choice;
     }
+
+    function getHumanChoice(){
+        //value x used for while loop
+        var x = 1;
+        //prompt the user to enter rock paper or scissors
+        choice = String(window.prompt("Please type 'rock', 'paper' or 'scissors'"));
+        //toLowerCase is used to convert user choice to lower case 
+        choice = choice.toLowerCase();
+        while(x){
+            console.log(choice);
+            if((choice == "rock") || (choice == "paper") || (choice == "scissors")){
+                return choice;
+                x = 0;
+            // if the user does not enter a valid answer, it will loop until valid answer is given
+            } else {
+                x = 1;
+                choice = window.prompt("INCORRECT VALUE! Please type 'rock', 'paper' or 'scissors'");
+                choice = choice.toLowerCase();
+            }
+        }
+    }
     
   </script>
 </body>
